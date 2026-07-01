@@ -1,0 +1,62 @@
+# ==========================================================
+# Lab Report OCR System — .gitignore
+# ==========================================================
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ── Virtual Environments ──
+venv/
+env/
+.venv/
+.env
+
+# ── IDE / Editor ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── macOS ──
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ── YOLO Model Weights (too large for GitHub) ──
+# Keep models/best.pt tracked via Git LFS or download separately
+*.pt
+!models/best.pt
+
+# ── YOLO Training Runs ──
+runs/
+
+# ── Temporary Files ──
+temp/
+
+# ── Runtime Outputs (generated per session) ──
+outputs/
+
+# ── Dataset Cache Files ──
+*.cache
+
+# ── Logs ──
+*.log
+
+# ── Jupyter Notebook Checkpoints ──
+.ipynb_checkpoints/
+
+# ── Environment Files ──
+.env
+
+# ── Byte-compiled / optimised ──
+*.pyo
+*.pdb

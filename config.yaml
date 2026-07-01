@@ -1,0 +1,61 @@
+# ==========================================================
+# Lab Report OCR — Central Configuration
+# ----------------------------------------------------------
+# All values here can be overridden at runtime by environment
+# variables (see .env.example). Edit this file to change app
+# behaviour without touching the code.
+# ==========================================================
+
+app:
+  title: "Lab Report OCR • AI Vision"
+  page_icon: "🔬"
+
+model:
+  # Path to the trained YOLO weights (relative to project root).
+  path: "models/best.pt"
+  # Default confidence threshold for the detection slider.
+  default_confidence: 0.25
+
+ocr:
+  # One of: "Tesseract", "EasyOCR", "Auto (Tesseract → EasyOCR)"
+  default_engine: "Auto (Tesseract → EasyOCR)"
+  # Tesseract page-segmentation mode.
+  tesseract_psm: 6
+  # EasyOCR languages and device.
+  easyocr_languages: ["en"]
+  easyocr_gpu: false
+
+preprocess:
+  # Master switch — when false, crops are passed to OCR as-is
+  # (Tesseract still applies its own Otsu threshold internally).
+  enabled: false
+  grayscale: true
+  denoise: true
+  adaptive_threshold: false
+  sharpen: false
+  # Upscale small crops so the longest side reaches this many px
+  # (0 disables resizing). Helps OCR on tiny text.
+  resize_min_dim: 1000
+
+paths:
+  temp_dir: "temp"
+  outputs_dir: "outputs"
+  logs_dir: "outputs/logs"
+
+cleanup:
+  # Temp files older than this are removed on startup.
+  temp_max_age_hours: 24
+
+logging:
+  level: "INFO"
+  file: "outputs/logs/app.log"
+  max_bytes: 1048576      # 1 MB per log file before rotation
+  backup_count: 5
+
+pdf:
+  # Render resolution for PDF pages (higher = sharper, slower).
+  render_dpi: 200
+
+batch:
+  # Safety cap on number of files/pages processed in one batch.
+  max_files: 25

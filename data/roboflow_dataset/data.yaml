@@ -1,0 +1,20 @@
+names:
+- Clinical_Conditions
+- Name
+- Ref_By
+- Reference_Range
+- Technology
+- Test_Asked
+- Test_Name
+- Unit
+- Value
+nc: 9
+roboflow:
+  license: CC BY 4.0
+  project: lab-of-ocr
+  url: https://universe.roboflow.com/workwithdevesh99-gmail-com/lab-of-ocr/dataset/1
+  version: 1
+  workspace: workwithdevesh99-gmail-com
+test: ../test/images
+train: ../train/images
+val: ../valid/images

@@ -1,0 +1,31 @@
+# ============================================
+# Lab Report OCR System Requirements
+# ============================================
+
+# ── UI ──
+streamlit>=1.32.0
+
+# ── Detection ──
+ultralytics>=8.4.0
+torch>=2.0.0
+torchvision>=0.15.0
+
+# ── Image / array processing ──
+opencv-python>=4.10.0
+numpy>=1.26.0
+Pillow>=10.0.0
+
+# ── Data / exports ──
+pandas>=2.2.0
+openpyxl>=3.1.0          # Excel (.xlsx) export
+
+# ── OCR engines ──
+pytesseract>=0.3.10
+easyocr>=1.7.1
+
+# ── PDF rendering ──
+pymupdf>=1.24.0          # renders PDF pages to images (no poppler needed)
+
+# ── Configuration ──
+PyYAML>=6.0              # config.yaml loading
+python-dotenv>=1.0.0     # optional .env overrides
